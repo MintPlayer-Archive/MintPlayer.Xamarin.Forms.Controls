@@ -9,9 +9,21 @@
     <PackageProjectUrl>https://github.com/PieterjanDeClippel/MintPlayer.Xamarin.Forms.Controls</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PieterjanDeClippel/MintPlayer.Xamarin.Forms.Controls</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>Xamarin.Forms, CheckBox</PackageTags>
-    <Version>1.0.0-pre1</Version>
+    <Version>1.0.0-pre2</Version>
+    <PackageReleaseNotes>(Please write the package release notes in "RELEASE NOTES.txt")</PackageReleaseNotes>
   </PropertyGroup>
+
+  <Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="./RELEASE-NOTES.txt">
+      <Output TaskParameter="Lines" ItemName="ReleaseNoteLines" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
