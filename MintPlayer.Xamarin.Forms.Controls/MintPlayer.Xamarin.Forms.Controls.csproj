@@ -6,13 +6,13 @@
     <Company>MintPlayer</Company>
     <Description>This package contains a Xamarin.Forms.CheckBox with Label</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/PieterjanDeClippel/MintPlayer.Xamarin.Forms.Controls</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/PieterjanDeClippel/MintPlayer.Xamarin.Forms.Controls</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MintPlayer/MintPlayer.Xamarin.Forms.Controls</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MintPlayer/MintPlayer.Xamarin.Forms.Controls</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>Xamarin.Forms, CheckBox</PackageTags>
-    <Version>1.0.0-pre3</Version>
+    <Version>1.0.0-pre4</Version>
     <PackageReleaseNotes>(Please write the package release notes in "RELEASE NOTES.txt")</PackageReleaseNotes>
   </PropertyGroup>
 
