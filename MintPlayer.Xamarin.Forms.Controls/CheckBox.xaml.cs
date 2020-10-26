@@ -17,6 +17,7 @@ namespace MintPlayer.Xamarin.Forms.Controls
         {
 
         });
+
         public bool IsChecked
         {
             get => (bool)GetValue(IsCheckedProperty);
