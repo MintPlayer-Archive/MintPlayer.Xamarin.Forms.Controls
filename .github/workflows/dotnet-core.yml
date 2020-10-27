@@ -32,7 +32,7 @@ jobs:
         NUGET_AUTH_TOKEN: ${{ github.token }}
       
     - name: Build
-      run: msbuild /t:Pack /p:Configuration=Debug MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+      run: msbuild /t:Pack /p:Configuration=Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
       
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
