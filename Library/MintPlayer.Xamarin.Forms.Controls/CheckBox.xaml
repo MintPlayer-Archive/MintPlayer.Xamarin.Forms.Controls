@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:MintPlayer.Xamarin.Forms.Controls"
+             
+             mc:Ignorable="d"
+             d:BindingContext="{x:Static controls:CheckBox}"
+             
              x:Class="MintPlayer.Xamarin.Forms.Controls.CheckBox">
-    <ContentView.BindingContext>
-        <controls:CheckBoxVM />
-    </ContentView.BindingContext>
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <!--<CheckBox IsChecked="{Binding IsChecked}" HorizontalOptions="Start" VerticalOptions="Start" />-->
-            <Label Text="{Binding Text}" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Padding="0,3,0,0">
+            <!--  Padding="0,3,0,0" -->
+            <Label Text="{Binding Text}" Padding="10" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
                 <Label.GestureRecognizers>
                     <!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />-->
                 </Label.GestureRecognizers>

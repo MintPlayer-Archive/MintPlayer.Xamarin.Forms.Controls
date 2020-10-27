@@ -11,7 +11,8 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <controls:CheckBox Text="Hello world" />
+        <!--<controls:CheckBox />-->
+        <controls:CheckBox Text="{Binding Text}" />
         <!--<controls:CheckBox Text="Hello world" IsChecked="{Binding PanelsVisible, Mode=TwoWay}" />-->
         <StackLayout Orientation="Vertical">
             <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>

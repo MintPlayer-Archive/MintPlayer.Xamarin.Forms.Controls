@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,18 @@ namespace MintPlayer.Xamarin.Forms.Controls
         public CheckBox()
         {
             InitializeComponent();
+            //BindingContext = this;
+
+            //var counter = 0;
+            //Task.Run(async () =>
+            //{
+            //    while (true)
+            //    {
+            //        await Task.Delay(1000);
+            //        Console.WriteLine(++counter);
+            //        Text = counter.ToString();
+            //    }
+            //});
         }
 
         //#region IsChecked
@@ -26,7 +39,16 @@ namespace MintPlayer.Xamarin.Forms.Controls
         //#endregion
 
         #region Text
-        public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(string), typeof(CheckBox), "");
+        public static readonly BindableProperty TextProperty = BindableProperty.Create(
+            "Text",
+            typeof(string),
+            typeof(CheckBox),
+            "",
+            BindingMode.TwoWay,
+            propertyChanged: (bindable, oldValue, newValue) =>
+            {
+                
+            });
         public string Text
         {
             get => (string)GetValue(TextProperty);
