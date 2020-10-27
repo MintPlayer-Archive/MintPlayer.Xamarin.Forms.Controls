@@ -22,17 +22,23 @@ jobs:
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
       env:
         NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
-    
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.1
-
-    - name: Install dependencies
-      run: msbuild /t:Restore
-      env:
-        NUGET_AUTH_TOKEN: ${{ github.token }}
       
+    #- name: Setup MSBuild
+    #  uses: microsoft/setup-msbuild@v1.0.1
+
+    #- name: Install dependencies
+    #  run: msbuild /t:Restore
+    #  env:
+    #    NUGET_AUTH_TOKEN: ${{ github.token }}
+    
+    #- name: Build
+    #  run: msbuild /t:Pack /p:Configuration=Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+    
     - name: Build
-      run: msbuild /t:Pack /p:Configuration=Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+      run: dotnet build --configuration Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+    
+    - name: Pack
+      run: dotnet pack
       
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
