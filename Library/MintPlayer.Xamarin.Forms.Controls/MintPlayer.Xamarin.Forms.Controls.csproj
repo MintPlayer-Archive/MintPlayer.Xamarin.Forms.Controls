@@ -1,6 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/2.1.2">
-
   <PropertyGroup>
+    <AssemblyName>MintPlayer.Xamarin.Forms.Controls</AssemblyName>
+    <RootNamespace>MintPlayer.Xamarin.Forms.Controls</RootNamespace>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Pieterjan De Clippel</Authors>
     <Company>MintPlayer</Company>
@@ -9,10 +10,12 @@
     <PackageProjectUrl>https://github.com/MintPlayer/MintPlayer.Xamarin.Forms.Controls</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MintPlayer/MintPlayer.Xamarin.Forms.Controls</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <PackageId>MintPlayer.Xamarin.Forms.Controls</PackageId>
+    <Product>MintPlayer.Xamarin.Forms.Controls</Product>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>Xamarin.Forms, CheckBox</PackageTags>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <PackageReleaseNotes>(Please write the package release notes in "RELEASE NOTES.txt")</PackageReleaseNotes>
   </PropertyGroup>
 
