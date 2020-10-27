@@ -12,19 +12,7 @@ namespace MintPlayer.Xamarin.Forms.Controls.Demo
     {
         public MainVM()
         {
-            //StartCounting();
         }
-
-        //private int c = 0;
-        //private async void StartCounting()
-        //{
-        //    while (true)
-        //    {
-        //        await Task.Delay(1000);
-        //        Console.WriteLine(++c);
-        //        Text = c.ToString();
-        //    }
-        //}
 
         private bool panelsVisible;
         public bool PanelsVisible
