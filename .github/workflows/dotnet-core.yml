@@ -23,35 +23,35 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
       
-    #- name: Setup MSBuild
-    #  uses: microsoft/setup-msbuild@v1.0.1
-
-    #- name: Install dependencies
-    #  run: msbuild /t:Restore
-    #  env:
-    #    NUGET_AUTH_TOKEN: ${{ github.token }}
-    
-    #- name: Build
-    #  run: msbuild /t:Pack /p:Configuration=Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.1
 
     - name: Install dependencies
-      run: dotnet restore
+      run: msbuild /t:Restore
       env:
-        NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
+        NUGET_AUTH_TOKEN: ${{ github.token }}
     
     - name: Build
-      run: dotnet build --configuration Debug --no-restore Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+      run: msbuild /t:Pack /p:Configuration=Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
+
+    #- name: Install dependencies
+    #  run: dotnet restore
+    #  env:
+    #    NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
+    
+    #- name: Build
+    #  run: dotnet build --configuration Debug --no-restore Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj
       
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
     
-    - name: Pack
-      run: dotnet pack --no-build --configuration Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj --output .
+    #- name: Pack
+    #  run: dotnet pack --no-build --configuration Debug Library/MintPlayer.Xamarin.Forms.Controls/MintPlayer.Xamarin.Forms.Controls.csproj --output .
 
     - name: PushNuget
       run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TO_NUGET_ORG }} --skip-duplicate
 
     - name: PushGithub
-      run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
+      run: nuget.exe push "**/*.nupkg" -NoSymbols -SkipDuplicate
       env:
         NUGET_AUTH_TOKEN: ${{ github.token }}
