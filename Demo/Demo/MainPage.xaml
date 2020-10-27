@@ -7,8 +7,23 @@
     <ContentPage.BindingContext>
         <app:MainVM />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="customLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
     <StackLayout>
-        <controls:CheckBox Text="Hello world" IsChecked="{Binding PanelsVisible, Mode=TwoWay}" />
+        <controls:CheckBox Text="Hello world" IsChecked="{Binding PanelsVisible, Mode=TwoWay}" LabelStyle="{Binding LabelStyle}">
+            <!--<controls:CheckBox.Triggers>
+                <DataTrigger Binding="{Binding PanelsVisible}" Value="True" TargetType="controls:CheckBox">
+                    <Setter Property="LabelStyle" Value="{StaticResource customLabel}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PanelsVisible}" Value="False" TargetType="controls:CheckBox">
+                    <Setter Property="LabelStyle" Value="{x:Null}" />
+                </DataTrigger>
+            </controls:CheckBox.Triggers>-->
+        </controls:CheckBox>
         <Switch IsToggled="{Binding PanelsVisible, Mode=TwoWay}" />
         <Frame IsVisible="{Binding PanelsVisible}" BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>

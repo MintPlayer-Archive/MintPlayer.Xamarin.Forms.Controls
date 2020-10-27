@@ -1,2 +1,5 @@
 ﻿v1.0.0
 - Create CheckBox
+
+v1.0.1
+- Added a bindable LabelStyle property to CheckBox
