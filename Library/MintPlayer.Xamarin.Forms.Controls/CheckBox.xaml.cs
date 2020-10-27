@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +10,6 @@ namespace MintPlayer.Xamarin.Forms.Controls
         public CheckBox()
         {
             InitializeComponent();
-            BindingContext = this;
         }
 
         #region IsChecked
@@ -24,10 +22,7 @@ namespace MintPlayer.Xamarin.Forms.Controls
         public bool IsChecked
         {
             get => (bool)GetValue(IsCheckedProperty);
-            set
-            {
-                SetValue(IsCheckedProperty, value);
-            }
+            set => SetValue(IsCheckedProperty, value);
         }
         #endregion
 

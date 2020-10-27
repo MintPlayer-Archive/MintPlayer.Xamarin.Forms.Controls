@@ -8,11 +8,12 @@
              mc:Ignorable="d"
              d:BindingContext="{x:Static controls:CheckBox}"
              
-             x:Class="MintPlayer.Xamarin.Forms.Controls.CheckBox">
+             x:Class="MintPlayer.Xamarin.Forms.Controls.CheckBox"
+             x:Name="container">
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />
-            <Label Text="{Binding Text}" Padding="0,5,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+            <CheckBox IsChecked="{Binding IsChecked, Source={x:Reference container}, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />
+            <Label Text="{Binding Text, Source={x:Reference container}}" Padding="0,5,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Label.GestureRecognizers>
