@@ -11,13 +11,15 @@
              x:Class="MintPlayer.Xamarin.Forms.Controls.CheckBox">
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <!--<CheckBox IsChecked="{Binding IsChecked}" HorizontalOptions="Start" VerticalOptions="Start" />-->
-            <!--  Padding="0,3,0,0" -->
-            <Label Text="{Binding Text}" Padding="10" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+            <CheckBox IsChecked="{Binding Tada, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />
+            <CheckBox IsChecked="{Binding Tada, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />
+            <Label Text="Hello" IsVisible="{Binding Tada}" />
+            <Label Text="{Binding Text}" Padding="0,5,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
                 <Label.GestureRecognizers>
-                    <!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />-->
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Label.GestureRecognizers>
             </Label>
+            <Label Text="Label" IsVisible="{Binding Tada}" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>
