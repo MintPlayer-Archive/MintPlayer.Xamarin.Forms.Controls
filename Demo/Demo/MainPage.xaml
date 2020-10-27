@@ -11,9 +11,6 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <!--<controls:CheckBox />-->
-        <!--<controls:CheckBox Text="{Binding Text}" />-->
-        <!--<controls:CheckBox Text="Hello world" IsChecked="{Binding PanelsVisible}" />-->
         <controls:CheckBox Text="Hello world" IsChecked="{Binding BindingContext.PanelsVisible, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type app:MainPage}}, Mode=TwoWay}" />
         <Switch IsToggled="{Binding BindingContext.PanelsVisible, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type app:MainPage}}, Mode=TwoWay}" />
         <StackLayout Orientation="Vertical" IsVisible="{Binding BindingContext.PanelsVisible, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type app:MainPage}}}">
@@ -30,6 +27,5 @@
                 </Label.FormattedText>
             </Label>
         </StackLayout>
-        <Button VerticalOptions="End" Text="Enter" Clicked="Button_Clicked" />
     </StackLayout>
 </ContentPage>

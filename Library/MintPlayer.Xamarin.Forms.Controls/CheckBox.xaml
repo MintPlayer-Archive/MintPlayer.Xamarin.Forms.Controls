@@ -12,14 +12,11 @@
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />
-            <!--<CheckBox IsChecked="{Binding Tada, Mode=TwoWay, UpdateSourceEventName=CheckedChanged}" HorizontalOptions="Start" VerticalOptions="Start" />-->
-            <Label Text="Hello" IsVisible="{Binding IsChecked}" />
             <Label Text="{Binding Text}" Padding="0,5,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Label" IsVisible="{Binding IsChecked}" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

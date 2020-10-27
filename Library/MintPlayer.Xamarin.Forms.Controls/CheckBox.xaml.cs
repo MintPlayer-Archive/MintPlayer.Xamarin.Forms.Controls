@@ -12,17 +12,6 @@ namespace MintPlayer.Xamarin.Forms.Controls
         {
             InitializeComponent();
             BindingContext = this;
-
-            //var counter = 0;
-            //Task.Run(async () =>
-            //{
-            //    while (true)
-            //    {
-            //        await Task.Delay(1000);
-            //        Console.WriteLine(++counter);
-            //        Text = counter.ToString();
-            //    }
-            //});
         }
 
         #region IsChecked
@@ -40,23 +29,13 @@ namespace MintPlayer.Xamarin.Forms.Controls
                 SetValue(IsCheckedProperty, value);
             }
         }
-
-        //private bool tada;
-        //public bool Tada
-        //{
-        //    get { return tada; }
-        //    set
-        //    {
-        //        tada = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
         #endregion
 
         #region Text
         public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(string), typeof(CheckBox), "", BindingMode.OneWay, propertyChanged: (bindable, oldValue, newValue) =>
         {
-                
+            var control = (CheckBox)bindable;
+            control.Text = (string)newValue;
         });
 
         public string Text

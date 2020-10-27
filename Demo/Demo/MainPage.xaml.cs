@@ -14,10 +14,5 @@ namespace MintPlayer.Xamarin.Forms.Controls.Demo
         {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
