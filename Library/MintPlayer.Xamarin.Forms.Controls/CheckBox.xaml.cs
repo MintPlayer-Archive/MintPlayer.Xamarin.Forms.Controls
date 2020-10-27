@@ -28,29 +28,29 @@ namespace MintPlayer.Xamarin.Forms.Controls
         #region IsChecked
         public static readonly BindableProperty IsCheckedProperty = BindableProperty.Create("IsChecked", typeof(bool), typeof(CheckBox), false, BindingMode.TwoWay, propertyChanged: (bindable, oldValue, newValue) =>
         {
-            //global::Xamarin.Forms.CheckBox c;c.CheckedChanged
+            var control = (CheckBox)bindable;
+            control.IsChecked = (bool)newValue;
         });
 
-        //public bool IsChecked
+        public bool IsChecked
+        {
+            get => (bool)GetValue(IsCheckedProperty);
+            set
+            {
+                SetValue(IsCheckedProperty, value);
+            }
+        }
+
+        //private bool tada;
+        //public bool Tada
         //{
-        //    get => (bool)GetValue(IsCheckedProperty);
+        //    get { return tada; }
         //    set
         //    {
-        //        SetValue(IsCheckedProperty, value);
+        //        tada = value;
         //        OnPropertyChanged();
         //    }
         //}
-
-        private bool tada;
-        public bool Tada
-        {
-            get { return tada; }
-            set
-            {
-                tada = value;
-                OnPropertyChanged();
-            }
-        }
         #endregion
 
         #region Text
@@ -68,7 +68,7 @@ namespace MintPlayer.Xamarin.Forms.Controls
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            //IsChecked = !IsChecked;
+            IsChecked = !IsChecked;
         }
     }
 }

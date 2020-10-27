@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="MintPlayer.MVVM.BaseModel" Version="1.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1180" />
   </ItemGroup>
 
   <ItemGroup>
