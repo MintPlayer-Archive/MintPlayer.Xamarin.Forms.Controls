@@ -44,7 +44,7 @@ namespace MintPlayer.Xamarin.Forms.Controls
             typeof(string),
             typeof(CheckBox),
             "",
-            BindingMode.TwoWay,
+            BindingMode.OneWay,
             propertyChanged: (bindable, oldValue, newValue) =>
             {
                 
